@@ -1,11 +1,10 @@
-import {MigrationInterface, QueryRunner, Table } from "typeorm";
+import {MigrationInterface, QueryRunner, Table} from "typeorm";
 
-
-export class clientes1632837637128 implements MigrationInterface {
+export class CreateAirplanes1632858007523 implements MigrationInterface {
 
     public async up(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.createTable( new Table ({
-            name: "clientes",
+            name: "airplanes",
             columns: [
                 {
                     name: "id",
@@ -13,33 +12,38 @@ export class clientes1632837637128 implements MigrationInterface {
                     isPrimary: true
                 },
                 {
-                    name: "name",
+                    name: "code",
                     type: "varchar"
                 },
                 {
-                    name: "cpf",
+                    name: "brand",
                     type: "varchar"
                 },
                 {
-                    name: "age",
+                    name: "model",
+                    type: "varchar"
+                },
+                {
+                    name: "year",
                     type: "varchar"
                 },
                 {
                     name: "created_at",
-                    type: "timestemp",
+                    type: "timestamp",
                     default: "now()"
                 },
                 {
-                    name: "updated_at",
+                    name: "update_at",
                     type: "timestemp",
                     default: "now()"
                 }
             ]
+
         }));
     }
 
     public async down(queryRunner: QueryRunner): Promise<void> {
-        await queryRunner.dropTable("clientes")
+        await queryRunner.dropTable("airplanes");
     }
 
 }
