@@ -1,4 +1,4 @@
-import { Column, CreateDateColumn, Entity, JoinColumn, ManyToMany, ManyToOne, PrimaryColumn, UpdateDateColumn } from "typeorm";
+import { Column, CreateDateColumn, Entity, JoinColumn, ManyToMany, ManyToOne, OneToOne, PrimaryColumn, UpdateDateColumn } from "typeorm";
 import { v4 as uuid } from "uuid";
 import { Airplane } from "./Airplane";
 import { Claint } from "./Client";
@@ -21,14 +21,14 @@ class Ticket {
     clients_id: string;
 
     @JoinColumn({ name: "clients_id" })
-    @ManyToOne(() => Claint)
+    @OneToOne(() => Claint)
     client: Claint;
 
     @Column()
     airplanes_id: string;
 
     @JoinColumn({ name: "airplanes_id"})
-    @ManyToOne(() => Airplane)
+    @OneToOne(() => Airplane)
     airplane: Airplane;
 
     @CreateDateColumn()

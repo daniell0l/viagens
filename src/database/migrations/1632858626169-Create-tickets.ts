@@ -40,7 +40,7 @@ export class CreateTickets1632858626169 implements MigrationInterface {
             ],
             foreignKeys: [
                 {
-                    name: "FKUserSenderTickets",
+                    name: "FKClients",
                     referencedTableName: "clients",
                     referencedColumnNames: ["id"],
                     columnNames: ["clients_id"],
@@ -48,7 +48,7 @@ export class CreateTickets1632858626169 implements MigrationInterface {
                     onUpdate: "SET NULL",
                 },
                 {
-                    name:"FKairplanesTickets",
+                    name:"FKAirplanes",
                     referencedTableName: "airplanes",
                     referencedColumnNames: ["id"],
                     columnNames: ["airplanes_id"],
