@@ -1,9 +1,9 @@
-import {MigrationInterface, QueryRunner, Table} from "typeorm";
+import { MigrationInterface, QueryRunner, Table } from "typeorm";
 
 export class CreateTickets1632858626169 implements MigrationInterface {
 
     public async up(queryRunner: QueryRunner): Promise<void> {
-        await queryRunner.createTable( new Table ({
+        await queryRunner.createTable(new Table({
             name: "tickets",
             columns: [
                 {
@@ -36,6 +36,11 @@ export class CreateTickets1632858626169 implements MigrationInterface {
                     type: "timestamp",
                     default: "now()"
                 },
+                {
+                    name: "updated_at",
+                    type: "timestemp",
+                    default: "now()"
+                }
 
             ],
             foreignKeys: [
@@ -48,13 +53,13 @@ export class CreateTickets1632858626169 implements MigrationInterface {
                     onUpdate: "SET NULL",
                 },
                 {
-                    name:"FKAirplanes",
+                    name: "FKAirplanes",
                     referencedTableName: "airplanes",
                     referencedColumnNames: ["id"],
                     columnNames: ["airplanes_id"],
                     onDelete: "SET NULL",
                     onUpdate: "SET NULL",
-                }  
+                }
             ]
         }));
     }

@@ -33,7 +33,7 @@ export class CreateAirplanes1632858007523 implements MigrationInterface {
                     default: "now()"
                 },
                 {
-                    name: "update_at",
+                    name: "updated_at",
                     type: "timestemp",
                     default: "now()"
                 }

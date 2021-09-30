@@ -11,7 +11,7 @@ class CreateClientService {
     async execute({ name, cpf, age,} : IClientResquest ) {
         const clientsRepository = getCustomRepository(ClientsRepositories);
 
-        if(cpf) {
+        if(!cpf) {
             throw new Error("cpf existing")
         }
 

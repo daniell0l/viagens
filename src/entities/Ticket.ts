@@ -32,7 +32,10 @@ class Ticket {
     airplane: Airplane;
 
     @CreateDateColumn()
-    created_id: Date;
+    created_at: Date;
+
+    @UpdateDateColumn()
+    updated_at: Date
 
     constructor() {
         if(!this.id) {

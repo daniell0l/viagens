@@ -19,14 +19,14 @@ class CreateTicketService {
        
         const clientRepositories = getCustomRepository(ClientsRepositories);
         
-        if(clients_id === airplanes_id) {
+        if(airplanes_id == clients_id) {
             throw new Error("Incorrect airplane!");
 
         }
        
         const airplanesExists = await clientRepositories.findOne(airplanes_id);
         
-        if(!airplanesExists) {
+        if(airplanesExists) {
             throw new Error("airplanes does not exists!");
         }
 

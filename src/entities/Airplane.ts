@@ -20,10 +20,10 @@ class Airplane {
     year: string;
 
     @CreateDateColumn()
-    created_id: Date;
+    created_at: Date;
 
     @UpdateDateColumn()
-    updaded_id: Date;
+    updated_at: Date;
 
     constructor() {
         if(!this.id) {
