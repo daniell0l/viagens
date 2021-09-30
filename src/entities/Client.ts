@@ -14,7 +14,7 @@ class Claint {
     cpf: string;
 
     @Column()
-    idade: string;
+    age: string;
 
     @CreateDateColumn()
     created_at: Date;
